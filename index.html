@@ -17,28 +17,53 @@
             line-height: 1.6;
         }
         header {
-            background-color: #1a365d;
-            padding: 20px;
-            text-align: center;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+            overflow: hidden;
             color: white;
+            text-shadow: 2px 2px 8px rgba(0,0,0,0.8);
+            text-align: center;
+            background-color: #1a365d;
         }
         header img {
-          <img src="5555.png" alt="Физика и астрономия">
-    <h1>Физика и астрономия</h1>
-    <div class="teacher-name">Създадено от: [Автор - Айля Лютфи]</div>
-</header>  max-width: 100%;
-            height: auto;
-            max-height: 120px;
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            z-index: 0;
+        }
+        header h1, header .teacher-name {
+            position: relative;
+            z-index: 1;
+        }
+        header h1 {
+            font-size: 3rem;
+            margin-bottom: 10px;
+        }
+        .teacher-name {
+            font-size: 1.5rem;
+            background: rgba(0, 0, 0, 0.5);
+            padding: 10px 25px;
+            border-radius: 50px;
+            margin-top: 20px;
+            font-weight: 500;
         }
         .container {
             max-width: 1200px;
-            margin: 30px auto;
+            margin: 50px auto;
             padding: 0 20px;
         }
-        h1 {
+        h1.main-title {
             text-align: center;
-            margin-bottom: 30px;
+            margin-bottom: 40px;
             color: #2c3e50;
+            font-size: 2rem;
         }
         .grid {
             display: grid;
@@ -114,28 +139,30 @@
         }
         footer {
             text-align: center;
-            padding: 30px;
-            margin-top: 50px;
+            padding: 40px;
+            margin-top: 60px;
             background-color: #2d3748;
             color: #a0aec0;
             font-size: 0.9rem;
+        }
+        @media (max-width: 768px) {
+            header h1 { font-size: 2rem; }
+            .teacher-name { font-size: 1.1rem; }
         }
     </style>
 </head>
 <body>
 
     <header>
-     
- <img src="5555.png" alt="Физика и астрономия - Автор: Айля Лютфи" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
-        <h2 style="display:none;">Физика и астрономия - Айля Лютфи</h2>
+        <img src="5555.png" alt="Физика и астрономия">
+        <h1>Физика и астрономия</h1>
+        <div class="teacher-name">Създадено от: Айля Лютфи</div>
     </header>
 
     <div class="container">
-        <h1>Изберете интерактивно приложение</h1>
+        <h1 class="main-title">Изберете интерактивно приложение</h1>
         
         <div class="grid">
-            
-            <!-- 8. Клас - Механика -->
             <div class="card">
                 <div>
                     <span class="badge">8. Клас</span>
@@ -151,7 +178,6 @@
                 </div>
             </div>
 
-            <!-- 8. Клас - Топлинни Явления -->
             <div class="card">
                 <div>
                     <span class="badge">8. Клас</span>
@@ -167,7 +193,6 @@
                 </div>
             </div>
 
-            <!-- 8. Клас - Калкулатор Скорост и Ускорение -->
             <div class="card">
                 <div>
                     <span class="badge">8. Клас</span>
@@ -183,7 +208,6 @@
                 </div>
             </div>
 
-            <!-- 9. Клас - Електричен Ток -->
             <div class="card">
                 <div>
                     <span class="badge">9. Клас</span>
@@ -192,14 +216,13 @@
                 </div>
                 <div>
                     <div class="qr-section">
-                        <img src="https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=https://fizika9-elektrichen-tok.netlify.app/" alt="QR Електричен ток">
+                        <img src="https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=https://fizika-9-elektrichen-tok.netlify.app/" alt="QR Електричен ток">
                         <div>Сканирай с телефон</div>
                     </div>
                     <a href="https://fizika-9-elektrichen-tok.netlify.app/" target="_blank" class="btn">Отвори Приложението</a>
                 </div>
             </div>
 
-            <!-- 9. Клас - Хармонично Трептене -->
             <div class="card">
                 <div>
                     <span class="badge">9. Клас</span>
@@ -215,7 +238,6 @@
                 </div>
             </div>
 
-            <!-- 10. Клас - Светлина и Оптика -->
             <div class="card">
                 <div>
                     <span class="badge">10. Клас</span>
@@ -230,12 +252,11 @@
                     <a href="https://optika10klasfizizkaiastronomi.netlify.app/" target="_blank" class="btn">Отвори Приложението</a>
                 </div>
             </div>
-
         </div>
     </div>
 
     <footer>
-        <p>© Айля Лютфи | Физика и астрономия и Химия и опазване на околната среда </p>
+        <p>© Айля Лютфи | Физика и астрономия и Химия и опазване на околната среда</p>
     </footer>
 
 </body>
