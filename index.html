@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="bg">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Физика и астрономия</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f4f7f9;
+            color: #333;
+            line-height: 1.6;
+        }
+        header {
+            background-color: #1a365d;
+            padding: 20px;
+            text-align: center;
+            color: white;
+        }
+        header img {
+            max-width: 100%;
+            height: auto;
+            max-height: 120px;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 30px auto;
+            padding: 0 20px;
+        }
+        h1 {
+            text-align: center;
+            margin-bottom: 30px;
+            color: #2c3e50;
+        }
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 25px;
+        }
+        .card {
+            background: white;
+            border-radius: 12px;
+            padding: 25px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.12);
+        }
+        .badge {
+            display: inline-block;
+            background-color: #e2e8f0;
+            color: #4a5568;
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: bold;
+            margin-bottom: 12px;
+            width: fit-content;
+        }
+        .card h2 {
+            font-size: 1.4rem;
+            color: #1a202c;
+            margin-bottom: 10px;
+        }
+        .card p {
+            color: #718096;
+            font-size: 0.95rem;
+            margin-bottom: 20px;
+            flex-grow: 1;
+        }
+        .qr-section {
+            text-align: center;
+            margin-bottom: 20px;
+            background: #f8fafc;
+            padding: 15px;
+            border-radius: 8px;
+        }
+        .qr-section img {
+            width: 130px;
+            height: 130px;
+        }
+        .qr-section div {
+            font-size: 0.8rem;
+            color: #a0aec0;
+            margin-top: 5px;
+        }
+        .btn {
+            display: block;
+            width: 100%;
+            padding: 12px;
+            background-color: #3182ce;
+            color: white;
+            text-align: center;
+            text-decoration: none;
+            border-radius: 8px;
+            font-weight: bold;
+            transition: background-color 0.2s;
+        }
+        .btn:hover {
+            background-color: #2b6cb0;
+        }
+        footer {
+            text-align: center;
+            padding: 30px;
+            margin-top: 50px;
+            background-color: #2d3748;
+            color: #a0aec0;
+            font-size: 0.9rem;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <img src="5555.png" alt="Физика и астрономия - Автор: Айля Лютфи" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+        <h2 style="display:none;">Физика и астрономия - Айля Лютфи</h2>
+    </header>
+
+    <div class="container">
+        <h1>Изберете интерактивно приложение</h1>
+        
+        <div class="grid">
+            
+            <!-- 8. Клас - Механика -->
+            <div class="card">
+                <div>
+                    <span class="badge">8. Клас</span>
+                    <h2>Механика</h2>
+                    <p>Интерактивни упражнения, формули и задачи по механика за 8. клас.</p>
+                </div>
+                <div>
+                    <div class="qr-section">
+                        <img src="https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=https://fizika-8-mehanika.netlify.app/" alt="QR Механика">
+                        <div>Сканирай с телефон</div>
+                    </div>
+                    <a href="https://fizika-8-mehanika.netlify.app/" target="_blank" class="btn">Отвори Приложението</a>
+                </div>
+            </div>
+
+            <!-- 8. Клас - Топлинни Явления -->
+            <div class="card">
+                <div>
+                    <span class="badge">8. Клас</span>
+                    <h2>Топлинни Явления</h2>
+                    <p>Учебни материали, процеси и симулации за топлинните явления.</p>
+                </div>
+                <div>
+                    <div class="qr-section">
+                        <img src="https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=https://8-toplinni-yavlenia.netlify.app/" alt="QR Топлинни явления">
+                        <div>Сканирай с телефон</div>
+                    </div>
+                    <a href="https://8-toplinni-yavlenia.netlify.app/" target="_blank" class="btn">Отвори Приложението</a>
+                </div>
+            </div>
+
+            <!-- 8. Клас - Калкулатор Скорост и Ускорение -->
+            <div class="card">
+                <div>
+                    <span class="badge">8. Клас</span>
+                    <h2>Калкулатор Скорост и Ускорение</h2>
+                    <p>Интерактивен калкулатор за бързо изчисляване на скорост, ускорение и път.</p>
+                </div>
+                <div>
+                    <div class="qr-section">
+                        <img src="https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=https://kalkulatorskorostuskorenie8klas.netlify.app/" alt="QR Калкулатор">
+                        <div>Сканирай с телефон</div>
+                    </div>
+                    <a href="https://kalkulatorskorostuskorenie8klas.netlify.app/" target="_blank" class="btn">Отвори Приложението</a>
+                </div>
+            </div>
+
+            <!-- 9. Клас - Електричен Ток -->
+            <div class="card">
+                <div>
+                    <span class="badge">9. Клас</span>
+                    <h2>Електричен Ток</h2>
+                    <p>Учебен раздел за електричен ток, закони, вериги и практически задачи.</p>
+                </div>
+                <div>
+                    <div class="qr-section">
+                        <img src="https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=https://fizika9-elektrichen-tok.netlify.app/" alt="QR Електричен ток">
+                        <div>Сканирай с телефон</div>
+                    </div>
+                    <a href="https://fizika-9-elektrichen-tok.netlify.app/" target="_blank" class="btn">Отвори Приложението</a>
+                </div>
+            </div>
+
+            <!-- 9. Клас - Хармонично Трептене -->
+            <div class="card">
+                <div>
+                    <span class="badge">9. Клас</span>
+                    <h2>Хармонично Трептене</h2>
+                    <p>Интерактивни материали и задачи за механични трептения и вълни.</p>
+                </div>
+                <div>
+                    <div class="qr-section">
+                        <img src="https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=https://fizika-9-harmonichno-treptene.netlify.app/" alt="QR Хармонично трептене">
+                        <div>Сканирай с телефон</div>
+                    </div>
+                    <a href="https://fizika-9-harmonichno-treptene.netlify.app/" target="_blank" class="btn">Отвори Приложението</a>
+                </div>
+            </div>
+
+            <!-- 10. Клас - Светлина и Оптика -->
+            <div class="card">
+                <div>
+                    <span class="badge">10. Клас</span>
+                    <h2>Светлина и Оптика</h2>
+                    <p>Интерактивни уроци и симулации по оптика, закони на отражението и пречупването.</p>
+                </div>
+                <div>
+                    <div class="qr-section">
+                        <img src="https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=https://optika10klasfizizkaiastronomi.netlify.app/" alt="QR Светлина и оптика">
+                        <div>Сканирай с телефон</div>
+                    </div>
+                    <a href="https://optika10klasfizizkaiastronomi.netlify.app/" target="_blank" class="btn">Отвори Приложението</a>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <footer>
+        <p>© Айля Лютфи | Физика и астрономия и Химия и опазване на околната среда </p>
+    </footer>
+
+</body>
+</html>
