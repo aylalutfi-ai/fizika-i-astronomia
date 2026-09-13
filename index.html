@@ -5,214 +5,146 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Физика и астрономия</title>
     <style>
-        * {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-        }
-        body, html {
-            height: 100%;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            scroll-behavior: smooth;
-        }
-        /* Начален екран (На цял екран) */
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        body, html { height: 100%; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; scroll-behavior: smooth; }
         .hero-page {
-            height: 100vh;
-            width: 100%;
-            position: relative;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            text-align: center;
-            color: white;
-            overflow: hidden;
+            height: 100vh; width: 100%; position: relative; display: flex;
+            flex-direction: column; justify-content: center; align-items: center;
+            text-align: center; color: white; overflow: hidden;
         }
-        .hero-image {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            z-index: -1;
-        }
-        .hero-overlay {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(0, 0, 0, 0.4); /* Леко затъмняване за четливост */
-            z-index: 0;
-        }
-        .hero-content {
-            position: relative;
-            z-index: 1;
-            padding: 20px;
-        }
-        .hero-content h1 {
-            font-size: 4rem;
-            text-shadow: 3px 3px 10px rgba(0,0,0,0.7);
-            margin-bottom: 20px;
-        }
+        .hero-image { position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; z-index: -1; }
+        .hero-overlay { position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0, 0, 0, 0.4); z-index: 0; }
+        .hero-content { position: relative; z-index: 1; padding: 20px; }
+        .hero-content h1 { font-size: 4rem; text-shadow: 3px 3px 10px rgba(0,0,0,0.7); margin-bottom: 20px; }
         .teacher-badge {
-            font-size: 1.8rem;
-            background: rgba(49, 130, 206, 0.8);
-            padding: 15px 40px;
-            border-radius: 50px;
-            display: inline-block;
-            margin-bottom: 40px;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+            font-size: 1.8rem; background: rgba(49, 130, 206, 0.9);
+            padding: 15px 40px; border-radius: 50px; display: inline-block;
+            margin-bottom: 40px; box-shadow: 0 4px 15px rgba(0,0,0,0.3);
         }
         .scroll-btn {
-            display: inline-block;
-            padding: 15px 30px;
-            background: white;
-            color: #1a365d;
-            text-decoration: none;
-            font-weight: bold;
-            border-radius: 8px;
-            font-size: 1.2rem;
-            transition: transform 0.2s;
-            cursor: pointer;
+            display: inline-block; padding: 15px 35px; background: white;
+            color: #1a365d; text-decoration: none; font-weight: bold;
+            border-radius: 8px; font-size: 1.2rem; transition: 0.3s;
         }
-        .scroll-btn:hover {
-            transform: scale(1.1);
-        }
-
-        /* Втора страница (Съдържание) */
-        .main-content {
-            background-color: #f4f7f9;
-            padding: 60px 20px;
-            min-height: 100vh;
-        }
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-        .main-title {
-            text-align: center;
-            margin-bottom: 50px;
-            color: #2c3e50;
-            font-size: 2.5rem;
-        }
-        .grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 30px;
-        }
+        .scroll-btn:hover { transform: scale(1.05); background: #edf2f7; }
+        .main-content { background-color: #f4f7f9; padding: 80px 20px; min-height: 100vh; }
+        .container { max-width: 1200px; margin: 0 auto; }
+        .main-title { text-align: center; margin-bottom: 50px; color: #2c3e50; font-size: 2.5rem; }
+        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; }
         .card {
-            background: white;
-            border-radius: 15px;
-            padding: 30px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
-            display: flex;
-            flex-direction: column;
-            transition: transform 0.3s;
+            background: white; border-radius: 15px; padding: 30px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.05); display: flex;
+            flex-direction: column; transition: 0.3s;
         }
         .card:hover { transform: translateY(-10px); }
         .badge {
-            background: #edf2f7;
-            color: #4a5568;
-            padding: 5px 15px;
-            border-radius: 20px;
-            font-weight: bold;
-            margin-bottom: 15px;
-            display: inline-block;
-            width: fit-content;
+            background: #e2e8f0; color: #4a5568; padding: 5px 15px;
+            border-radius: 20px; font-weight: bold; margin-bottom: 15px;
+            width: fit-content; font-size: 0.9rem;
         }
+        .card h2 { margin-bottom: 10px; color: #1a202c; }
+        .card p { color: #718096; margin-bottom: 20px; flex-grow: 1; }
+        .qr-section { text-align: center; margin-bottom: 20px; background: #f8fafc; padding: 15px; border-radius: 10px; }
+        .qr-section img { width: 120px; height: 120px; }
         .btn {
-            margin-top: auto;
-            display: block;
-            background: #3182ce;
-            color: white;
-            text-align: center;
-            padding: 12px;
-            text-decoration: none;
-            border-radius: 8px;
-            font-weight: bold;
+            display: block; background: #3182ce; color: white;
+            text-align: center; padding: 12px; text-decoration: none;
+            border-radius: 8px; font-weight: bold; transition: 0.2s;
         }
-        .qr-section {
-            text-align: center;
-            margin: 20px 0;
-            background: #f8fafc;
-            padding: 15px;
-            border-radius: 10px;
-        }
-        footer {
-            text-align: center;
-            padding: 50px;
-            background: #2d3748;
-            color: white;
-        }
-
-        @media (max-width: 768px) {
-            .hero-content h1 { font-size: 2.5rem; }
-            .teacher-badge { font-size: 1.2rem; }
-        }
+        .btn:hover { background: #2b6cb0; }
+        footer { text-align: center; padding: 60px; background: #2d3748; color: #a0aec0; }
+        @media (max-width: 768px) { .hero-content h1 { font-size: 2.5rem; } }
     </style>
 </head>
 <body>
 
-    <!-- НАЧАЛНА СТРАНИЦА -->
     <section class="hero-page">
-        <img src="5555.png" alt="Фон Физика" class="hero-image">
+        <img src="5555.png" alt="Фон" class="hero-image">
         <div class="hero-overlay"></div>
-        
         <div class="hero-content">
             <h1>Физика и астрономия</h1>
-            <div class="teacher-badge">Учител: Айля Лютфи</div>
-            <br>
-            <a href="#content" class="scroll-btn">Влез в сайта ↓</a>
+            <div class="teacher-badge">Учител: Айля Лютфи</div><br>
+            <a href="#content" class="scroll-btn">Към приложенията ↓</a>
         </div>
     </section>
 
-    <!-- СТРАНИЦА СЪС СЪДЪРЖАНИЕ -->
     <div id="content" class="main-content">
         <div class="container">
-            <h1 class="main-title">Интерактивни приложения</h1>
-            
+            <h1 class="main-title">Изберете интерактивно приложение</h1>
             <div class="grid">
-                <!-- Карта 8 Клас Механика -->
+                
+                <!-- 8 Клас - Механика -->
                 <div class="card">
                     <span class="badge">8. Клас</span>
                     <h2>Механика</h2>
-                    <p>Интерактивни упражнения и задачи.</p>
+                    <p>Интерактивни упражнения, формули и задачи по механика.</p>
                     <div class="qr-section">
-                        <img src="https://api.qrserver.com/v1/create-qr-code/?size=100x100&data=https://fizika-8-mehanika.netlify.app/" alt="QR">
+                        <img src="https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=https://fizika-8-mehanika.netlify.app/" alt="QR">
                     </div>
                     <a href="https://fizika-8-mehanika.netlify.app/" target="_blank" class="btn">Отвори</a>
                 </div>
 
-                <!-- Тук можете да добавите останалите си карти по същия модел -->
-                <!-- Карта 8 Клас Топлинни -->
+                <!-- 8 Клас - Топлинни -->
                 <div class="card">
                     <span class="badge">8. Клас</span>
                     <h2>Топлинни Явления</h2>
-                    <p>Учебни материали и симулации.</p>
+                    <p>Учебни материали, процеси и симулации за топлинните явления.</p>
                     <div class="qr-section">
-                        <img src="https://api.qrserver.com/v1/create-qr-code/?size=100x100&data=https://8-toplinni-yavlenia.netlify.app/" alt="QR">
+                        <img src="https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=https://8-toplinni-yavlenia.netlify.app/" alt="QR">
                     </div>
                     <a href="https://8-toplinni-yavlenia.netlify.app/" target="_blank" class="btn">Отвори</a>
                 </div>
 
-                <!-- Карта 9 Клас Ел. Ток -->
+                <!-- 8 Клас - Калкулатор -->
+                <div class="card">
+                    <span class="badge">8. Клас</span>
+                    <h2>Калкулатор Скорост</h2>
+                    <p>Интерактивен калкулатор за изчисляване на скорост и ускорение.</p>
+                    <div class="qr-section">
+                        <img src="https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=https://kalkulatorskorostuskorenie8klas.netlify.app/" alt="QR">
+                    </div>
+                    <a href="https://kalkulatorskorostuskorenie8klas.netlify.app/" target="_blank" class="btn">Отвори</a>
+                </div>
+
+                <!-- 9 Клас - Ел. Ток -->
                 <div class="card">
                     <span class="badge">9. Клас</span>
                     <h2>Електричен Ток</h2>
-                    <p>Закони и практически задачи.</p>
+                    <p>Учебен раздел за електричен ток, закони и вериги.</p>
                     <div class="qr-section">
-                        <img src="https://api.qrserver.com/v1/create-qr-code/?size=100x100&data=https://fizika-9-elektrichen-tok.netlify.app/" alt="QR">
+                        <img src="https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=https://fizika-9-elektrichen-tok.netlify.app/" alt="QR">
                     </div>
                     <a href="https://fizika-9-elektrichen-tok.netlify.app/" target="_blank" class="btn">Отвори</a>
                 </div>
+
+                <!-- 9 Клас - Трептения -->
+                <div class="card">
+                    <span class="badge">9. Клас</span>
+                    <h2>Хармонично Трептене</h2>
+                    <p>Интерактивни материали за механични трептения и вълни.</p>
+                    <div class="qr-section">
+                        <img src="https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=https://fizika-9-harmonichno-treptene.netlify.app/" alt="QR">
+                    </div>
+                    <a href="https://fizika-9-harmonichno-treptene.netlify.app/" target="_blank" class="btn">Отвори</a>
+                </div>
+
+                <!-- 10 Клас - Оптика -->
+                <div class="card">
+                    <span class="badge">10. Клас</span>
+                    <h2>Светлина и Оптика</h2>
+                    <p>Уроци и симулации по оптика и закони на светлината.</p>
+                    <div class="qr-section">
+                        <img src="https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=https://optika10klasfizizkaiastronomi.netlify.app/" alt="QR">
+                    </div>
+                    <a href="https://optika10klasfizizkaiastronomi.netlify.app/" target="_blank" class="btn">Отвори</a>
+                </div>
+
             </div>
         </div>
     </div>
 
     <footer>
-        <p>© Айля Лютфи | Физика и астрономия</p>
+        <p>© Айля Лютфи | Физика и астрономия и Химия и опазване на околната среда</p>
     </footer>
 
 </body>
